@@ -15,11 +15,13 @@ public class DestinationCity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "destination_city_name", nullable = false, length = 50)
     private String destinationCityName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "shipping_company_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private ShippingCompany shippingCompany;
+    @OneToOne(mappedBy = "destinationCity", cascade = CascadeType.ALL)
+    private Shipping shipping;
+
+    // Otros campos y métodos getter/setter
 }
+

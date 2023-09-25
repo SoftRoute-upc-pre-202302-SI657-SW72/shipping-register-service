@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import upc.edu.pe.softroute.shippingregisterservice.domain.models.ShippingCompany;
 import upc.edu.pe.softroute.shippingregisterservice.domain.services.IShippingCompanyService;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +33,7 @@ public class ShippingCompanyController {
             @ApiResponse(code = 404, message = "Shipping Company Not Found"),
             @ApiResponse(code = 500, message = "Internal Server Error")
     })
-    public ResponseEntity<ShippingCompany> insertShippingCompany(@RequestBody ShippingCompany shippingCompany){
+    public ResponseEntity<ShippingCompany> insertShippingCompany(@Valid @RequestBody ShippingCompany shippingCompany){
         try{
             ShippingCompany shippingCompanyNew = shippingCompanyService.save(shippingCompany);
             return ResponseEntity.status(HttpStatus.CREATED).body(shippingCompanyNew);
