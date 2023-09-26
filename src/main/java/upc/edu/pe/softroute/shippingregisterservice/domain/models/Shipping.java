@@ -41,6 +41,16 @@ public class Shipping {
     @JoinColumn(name = "destination_city_id")
     private DestinationCity destinationCity;
 
-    // Otros campos y métodos getter/setter
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "sender_id")
+    private Sender sender;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "consignee_id")
+    private Consignee consignee;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "type_package_id")
+    private TypePackage typePackage;
 }
 
