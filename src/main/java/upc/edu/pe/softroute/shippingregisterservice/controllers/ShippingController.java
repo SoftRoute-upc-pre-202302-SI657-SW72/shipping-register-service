@@ -200,7 +200,9 @@ public class ShippingController {
         }
     }
 
-    /*@PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    /*
+
+    @PutMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Update Shipping Register", notes = "Method to update a Shipping Register")
     @ApiResponses({
             @ApiResponse(code = 200, message = "Shipping Register updated successfully"),
@@ -221,7 +223,11 @@ public class ShippingController {
         }catch (Exception e){
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }*/
+    }
+
+    */
+
+    /*
 
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Update Shipping Register", notes = "Method to update a All Items of Shipping Register")
@@ -257,6 +263,8 @@ public class ShippingController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    */
 
 
 }
